@@ -1,0 +1,31 @@
+/* Add this CSS to your style sheet */
+
+ion-content {
+  --ion-background-color: #f4f4f4; /* Set the background color for ion-content */
+}
+
+ion-card {
+  margin-bottom: 16px; /* Add some bottom margin between cards */
+}
+
+ion-card-content {
+  padding: 0 16px; /* Add some horizontal padding to card content */
+}
+
+ion-item {
+  --padding-start: 0; /* Remove the default left padding of ion-item */
+  --padding-end: 0; /* Remove the default right padding of ion-item */
+}
+
+ion-text {
+  display: block; /* Make ion-text elements behave like block elements */
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #333333; /* Set the text color */
+  padding-top: 8px; /* Add some top padding to ion-text elements */
+}
+
+.ionic-more{
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}

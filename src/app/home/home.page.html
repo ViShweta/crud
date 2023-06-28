@@ -1,0 +1,47 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      User Data 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+    <ion-card *ngFor="let user of saveuser,, let i = index">
+      <ion-reorder></ion-reorder>
+      <ion-icon name="ellipsis-vertical-sharp" class="ionic-more" (click)="presentActionSheet(i,user)"></ion-icon>
+      <ion-card-header>
+     
+        <ion-card-title> Name : {{ user.firstName }} {{ user.lastName }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-text>Address : {{ user.address }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text> Phone Number :{{ user.Mobile }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text> Email : {{ user.email }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text> Password : {{ user.password }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text> Gender : {{ user.Gender }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-text> Skills : {{ user.skills }}</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-reorder-group>
+
+</ion-content>
+<ion-header>
+  <ion-button href="/signup">Accoun</ion-button>  
+</ion-header>

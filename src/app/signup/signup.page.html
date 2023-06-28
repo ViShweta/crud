@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="SignForm" (ngSubmit)="OnSubmit(SignForm.value)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating">FirstName</ion-label>
+            <ion-input formControlName="firstName" type="text" placeholder="Type your firstName"></ion-input>
+          </ion-item>
+          <div *ngIf="SignForm.controls['firstName'].invalid && SignForm.controls['firstName'].touched"
+            class="alert alert-danger">
+            Enter Valid Name
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating">LastName</ion-label>
+            <ion-input formControlName="lastName" type="text" placeholder="Type your LastName"></ion-input>
+          </ion-item>
+          <div *ngIf="SignForm.controls['lastName'].invalid && SignForm.controls['lastName'].touched"
+            class="alert alert-danger">
+            Enter Valid Name
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Mobile</ion-label>
+            <ion-input formControlName="Mobile" type="number" placeholder="Type Your Number"></ion-input>
+          </ion-item>
+          <div *ngIf="SignForm.controls['Mobile'].invalid && SignForm.controls['Mobile'].touched"
+            class="alert alert-danger">
+            Enter Valid Mobile Number
+          </div>
+          <ion-item>
+            <ion-label position="floating">Address</ion-label>
+            <ion-input formControlName="address" type="text" placeholder="Type Full Address"></ion-input>
+          </ion-item>
+          <div *ngIf="SignForm.controls['address'].invalid && SignForm.controls['address'].touched"
+            class="alert alert-danger">
+            Enter Valid Address
+          </div>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" type="email" placeholder="Type Your Email"></ion-input>
+          </ion-item>
+          <div *ngIf="SignForm.controls['email'].invalid && SignForm.controls['email'].touched"
+            class="alert alert-danger">
+            Enter Correct Email
+          </div>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="password" type="password" placeholder="Type Your Password"></ion-input>
+          </ion-item>
+          <div *ngIf="SignForm.controls['password'].invalid && SignForm.controls['password'].touched"
+            class="alert alert-danger">
+            Enter Correct Password
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-radio-group formControlName="Gender">
+          <ion-item>
+            <ion-label>Male</ion-label>
+            <ion-radio value="male"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Female</ion-label>
+            <ion-radio value="female"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <div *ngIf="SignForm.controls['Gender'].invalid && SignForm.controls['Gender'].touched"
+          class="alert alert-danger">
+          Enter Correct Password
+        </div>
+      </ion-item>
+     <ion-list>
+     <ion-label>Skills</ion-label>
+     <ion-item>
+      <ion-label>Ionic</ion-label>
+      <ion-checkbox color="danger"  justify="start" formControlName="skills"></ion-checkbox>
+    </ion-item>
+     </ion-list>
+      <div *ngIf="SignForm.controls['skills'].invalid && SignForm.controls['skills'].touched"
+        class="alert alert-danger">
+        Enter Correct Password
+      </div>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button type="submit" expand="full" [disabled]="SignForm.invalid" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
